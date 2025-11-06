@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/fonts/font.css">
+    <link rel="stylesheet" href="assets/styles/admin/admin-login.css">
+    
+    <script src="assets/scripts/admin-login.js" type="module" defer></script>
+    
+    <title>Đăng nhập Admin</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="login-container">
+            <div class="login-header">
+                <h3>ĐĂNG NHẬP ADMIN</h3>
+            </div>
+            
+            <form id="login-form">
+                <div class="form-group">
+                    <div class="label-div">
+                        <label for="username">Tên đăng nhập</label>
+                    </div>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <div class="label-div">
+                        <label for="password">Mật khẩu</label>
+                    </div>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                
+                <p id="error-message" class="error-text"></p>
+                
+                <div class="button-wrapper">
+                    <button type="submit" class="login-button">Đăng nhập</button>
+                </div>
+            </form>
+            
+        </div>
+    </div>
+</body>
+</html>

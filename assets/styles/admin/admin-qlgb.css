@@ -1,0 +1,38 @@
+
+
+.settings-section, .lookup-section {
+    background-color: #ffffff;
+    padding: 1.5em;
+    margin-bottom: 2em;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.settings-section h2, .lookup-section h2 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 1em;
+    font-size: clamp(1.2rem, 3vw, 1.6rem);
+    color: #5a72ad;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 0.5em;
+}
+
+.profit-input {
+    width: 80px;
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.profit-input:focus {
+    outline: 2px solid #748bcc;
+    border-color: #748bcc;
+}
+
+
+.main-content .content-body {
+    background-color: transparent;
+    padding: 0;
+}

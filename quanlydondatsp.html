@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Đơn hàng</title>
+    <link rel="stylesheet" href="assets/fonts/font.css">
+    <link rel="stylesheet" href="assets/styles/admin/admin-global.css">
+    <link rel="stylesheet" href="assets/styles/admin/admin-qlkh.css">
+    <link rel="stylesheet" href="assets/styles/admin/admin-modal.css">
+    <script src="assets/scripts/virtualData-orders.js" type="module" defer></script>
+    <script src="assets/scripts/admin-guard.js" type="module"></script>
+</head>
+<body>
+    <div class="admin-wrapper">
+        <aside class="sidebar">
+            <div class="sidebar-header">ADMIN</div>
+            <nav class="sidebar-nav">
+                <a href="dashboard.html">Trang tổng quan</a>
+                <a href="quanlykhachhang.html">Quản lý khách hàng / người dùng</a>
+                <a href="quanlyloaisp.html">Quản lý loại sản phẩm</a>
+                <a href="quanlynhapsp.html">Quản lý Nhập sản phẩm</a>
+                <a href="quanlygiaban.html">Quản lý giá bán</a>
+                <a href="quanlydondatsp.html" class="active">Quản lý đơn đặt hàng của khách hàng / người dùng</a>
+                <a href="quanlysoluongtonkho.html">Quản lý số lượng tồn kho của sản phẩm</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="wrapper">
+                <header class="content-header">
+                    <h1>Quản lý Đơn đặt hàng</h1>
+                </header>
+                
+                <div class="content-body">
+                    <div class="table-wrapper">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>ID Đơn hàng</th>
+                                    <th>Tên Khách hàng</th>
+                                    <th>Ngày đặt</th>
+                                    <th>Tổng tiền</th>
+                                    <th>Số lượng</th>
+                                    <th>Trạng thái</th>
+                                    <th>Hành động</th>
+                                </tr>
+                            </thead>
+                            <tbody id="orders-table-body">
+                                </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <footer class="manage-panel">
+                <button class="btn" id="add-order-btn">Tạo đơn hàng mới</button>
+                <input type="text" placeholder="Tìm kiếm đơn hàng..." class="search-box">
+            </footer>
+        </main>
+    </div>
+
+    <div id="add-order-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Tạo Đơn Hàng Mới</h2>
+            <form id="add-order-form">
+                <div class->
+                    <label for="order-customer">Chọn khách hàng:</label>
+                    <select id="order-customer" name="customer" required></select>
+                </div>
+                
+                <h3>Chi tiết sản phẩm</h3>
+                <div class="order-item-creator">
+                    <label for="order-product">Chọn sản phẩm:</label>
+                    <select id="order-product" name="product"></select>
+                    
+                    <label for="order-quantity">Số lượng:</label>
+                    <input type="number" id="order-quantity" name="quantity" min="1" value="1">
+                    
+                    <button type="button" id="add-item-btn" class="btn">Thêm vào đơn</button>
+                </div>
+                
+                <h4>Các sản phẩm trong đơn:</h4>
+                <ul id="order-items-list">
+                    </ul>
+                
+                <h3 id="order-total">Tổng tiền: 0 VNĐ</h3>
+                <button type="submit" class="btn">Lưu Đơn Hàng</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="approve-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Xác nhận duyệt đơn hàng</h2>
+            <p>Bạn có chắc muốn duyệt đơn hàng này không? <br>
+            </p>
+            <div class="action-buttons">
+                <button id="confirm-approve-btn" class="btn btn-danger">Xác nhận Duyệt</button>
+                <button class="btn cancel-btn">Hủy</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="cancel-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Xác nhận hủy đơn hàng</h2>
+            <p>Bạn có chắc muốn hủy đơn hàng này không? <br>
+                <strong>Nếu đơn đã duyệt, hàng sẽ được hoàn lại kho.</strong>
+            </p>
+            <div class="action-buttons">
+                <button id="confirm-cancel-btn" class="btn btn-danger">Xác nhận Hủy</D>
+                <button class="btn cancel-btn">Hủy</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,141 @@
+.modal {
+    display: none; /* Ẩn đi */
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal.visible {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.modal-content h2, .auth-container h2{
+    color: white;
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 5px;
+    right: 15px;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Style cho Form Auth */
+.auth-container {
+    background-color: white;
+    padding: 2em;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    max-width: 390px;
+    margin: 2em auto;
+}
+
+.auth-container h2 {
+    text-align: center;
+    margin-top: 0;
+}
+
+.form-group {
+    margin-bottom: 1.5em;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5em;
+    font-weight: 600;
+    color: white;
+}
+
+.form-group input:not(.radio-input) {
+    width: 100%;
+    padding: 0.75em;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box; /* Quan trọng */
+}
+
+.btn-auth, .logout-btn {
+    background-color: white;
+    color: black;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    border: 0px;
+    border-radius: 6px;
+    padding: 0.75em;
+    width: 100%;
+    cursor: pointer;
+}
+
+.filter-button {
+    background-color: white;
+    color: black;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    border: 0px;
+    border-radius: 6px;
+    padding: 0.75em;
+    width: 100%;
+    cursor: pointer;
+}
+
+.btn-auth {
+    margin-bottom: 1.5em;
+}
+
+.error-text {
+    color: #D9534F;
+    font-size: 0.9rem;
+    text-align: center;
+    min-height: 1.2em;
+}
+
+.switch-auth {
+    color: white;
+    text-align: center;
+    margin-top: 1.5em;
+    font-size: 0.9rem;
+}
+
+.auth-container {
+    background: #B2CBDE;
+    background: linear-gradient(120deg,rgba(178, 203, 222, 1) 1%, rgba(111, 162, 209, 1) 55%, rgba(143, 143, 181, 1) 100%);
+}
+
+@media screen and (min-width: 1200px) {
+    .filter-button {
+        max-width: 200px;
+    }
+}

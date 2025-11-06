@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Sản phẩm theo Loại</title>
+    <link rel="stylesheet" href="assets/fonts/font.css">
+    <link rel="stylesheet" href="assets/styles/admin/admin-global.css">
+    <link rel="stylesheet" href="assets/styles/admin/admin-qlkh.css">
+    <link rel="stylesheet" href="assets/styles/admin/admin-modal.css"> <script src="/assets/scripts/virtualData-products.js" type="module" defer></script>
+    <script src="assets/scripts/admin-guard.js" type="module"></script>
+</head>
+<body>
+    <div class="admin-wrapper">
+        <aside class="sidebar">
+            <div class="sidebar-header">ADMIN</div>
+            <nav class="sidebar-nav">
+                <a href="dashboard.html">Trang tổng quan</a>
+                <a href="quanlykhachhang.html">Quản lý khách hàng / người dùng</a>
+                <a href="quanlyloaisp.html" class="active">Quản lý loại sản phẩm</a>
+                <a href="quanlynhapsp.html">Quản lý Nhập sản phẩm</a>
+                <a href="quanlygiaban.html">Quản lý giá bán</a>
+                <a href="quanlydondatsp.html">Quản lý đơn đặt hàng</a>
+                <a href="quanlysoluongtonkho.html">Quản lý số lượng tồn của sản phẩm</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="wrapper">
+                <header class="content-header">
+                    <h1 id="category-title"></h1>
+                </header>
+                
+                <div class="content-body">
+                    <div class="table-wrapper">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Ảnh</th> 
+                                    <th>ID Sản phẩm</th>
+                                    <th>Tên sản phẩm</th>
+                                    <th>Thương hiệu</th>
+                                    <th>Giá bán</th>
+                                    <th>Tồn kho</th>
+                                    <th>Trạng thái</th>
+                                    <th>Hành động</th>
+                                </tr>
+                            </thead>
+                            <tbody id="product-table-body">
+                                </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <footer class="manage-panel">
+                <input type="text" placeholder="Tìm kiếm sản phẩm trong danh mục này..." class="search-box">
+            </footer>
+            
+            <div id="edit-product-modal" class="modal hidden">
+                <div class="modal-content">
+                    <span class="close-btn">&times;</span>
+                    <h2>Chỉnh sửa thông tin sản phẩm</h2>
+                    <form id="edit-product-form">
+                        <input type="hidden" name="id">
+                        
+                        <label for="product-name">Tên sản phẩm:</label>
+                        <input type="text" name="name" id="product-name" required>
+                        
+                        <label for="product-brand">Thương hiệu:</label>
+                        <input type="text" name="brand" id="product-brand" required>
+                        
+                        <label for="product-image">Link ảnh minh họa:</label>
+                        <input type="text" name="imageUrl" id="product-image">
+                        
+                        <label for="product-description">Mô tả sản phẩm:</label>
+                        <textarea name="description" id="product-description"></textarea>
+                        
+                        <button type="submit" class="btn">Cập nhật sản phẩm</button>
+                    </form>
+                </div>
+            </div>
+            
+        </main>
+    </div>
+</body>
+</html>

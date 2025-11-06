@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/styles/user/user-dashboard.css">
+    <link rel="stylesheet" href="assets/fonts/font.css">
+    <link rel="stylesheet" href="assets/styles/user/user-auth.css">
+    <link rel="stylesheet" href="assets/styles/user/user-pages.css">
+    
+    <script src="assets/scripts/user-scripts/user-global.js" type="module" defer></script>
+    <script src="assets/scripts/user-scripts/user-order-history.js" type="module" defer></script>
+    <title>Lịch Sử Đơn Hàng</title>
+</head>
+<body>
+    <header class="header">
+        <div class="panel-flex">
+                    <button id="login-btn" class="login-button">Đăng nhập</button>
+                    
+                    <a href="index.html" class="register-link-btn">Đăng kí</a>
+                </div>
+        <h1><a href="user-dashboard.html" style="color:white; text-decoration: none;">Trạm Không Gian</a></h1>
+        <p>"Any sufficiently advanced technology is indistinguishable from magic."</p>
+        <div class="section" id="category-links"></div>
+    </header>
+    <div class="wrapper">
+        <main class="main-wrapper">
+            <div class="history-container">
+                <h2>Lịch sử mua hàng</h2>
+                <div id="order-history-list">
+                    </div>
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="informations">
+            <div class="contacts">
+                <div class="informations-header">
+                    <h3>TỔNG ĐÀI HỖ TRỢ</h3>
+                </div>
+                    <p>Mua hàng: 1900 727727</p>
+                    <p>Bảo hành: 1900 666666</p>
+                    <p>Khiếu nại: 1900 696969</p>
+                </div>
+            <div class="connections">
+                <div class="informations-header">
+                    <h3>KẾT NỐI VỚI CHÚNG TÔI</h3>
+                </div>
+                <div>
+                    <a href="https://www.facebook.com/equ1pment/" target="_blank">Facebook</a>
+                    <a href="https://www.youtube.com/@equ1pp" target="_blank">Youtube</a>
+                    <a href="https://www.tiktok.com/@chascadepgaiquaaa" target="_blank">TikTok</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <button class="menu-trigger">
+                <span>TỔNG ĐÀI HỖ TRỢ</span>
+                <span class="icon">+</span>
+            </button>
+
+            <div class="sub-menu">
+                <p>Mua hàng: 1900 727727</p>
+                <p>Bảo hành: 1900 666666</p>
+                <p>Khiếu nại: 1900 696969</p>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <button class="menu-trigger">
+                <span>KẾT NỐI VỚI CHÚNG TÔI</span>
+                <span class="icon">+</span>
+            </button>
+            
+            <div class="sub-menu">
+                <a href="https://www.facebook.com/equ1pment/" target="_blank">Facebook</a>
+                <a href="https://www.youtube.com/@equ1pp" target="_blank">Youtube</a>
+                <a href="https://www.tiktok.com/@chascadepgaiquaaa" target="_blank">TikTok</a>
+            </div>
+        </div>
+    </footer>
+    
+    <div id="login-modal" class="modal hidden">
+        <div class="modal-content auth-container" style="margin: auto; box-shadow: none;">
+            </div>
+    </div>
+</body>
+</html>

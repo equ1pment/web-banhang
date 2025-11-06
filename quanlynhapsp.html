@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/fonts/font.css">
+    <link rel="stylesheet" href="assets/styles/admin/admin-global.css">
+    <link rel="stylesheet" href="assets/styles/admin/admin-qlkh.css">
+    <link rel="stylesheet" href="assets/styles/admin/admin-modal.css">
+    <script src="assets/scripts/virtualData-productIn.js" type="module" defer></script>
+    <script src="assets/scripts/admin-guard.js" type="module"></script>
+    <title>Quản lý Nhập sản phẩm</title>
+</head>
+
+<body>
+    <div class="admin-wrapper">
+        <aside class="sidebar">
+            <div class="sidebar-header">ADMIN</div>
+            <nav class="sidebar-nav">
+                <a href="dashboard.html">Trang tổng quan</a>
+                <a href="quanlykhachhang.html">Quản lý khách hàng / người dùng</a>
+                <a href="quanlyloaisp.html">Quản lý loại sản phẩm</a>
+                <a href="quanlynhapsp.html" class="active">Quản lý Nhập sản phẩm</a>
+                <a href="quanlygiaban.html">Quản lý giá bán</a>
+                <a href="quanlydondatsp.html">Quản lý đơn đặt hàng</a>
+                <a href="quanlysoluongtonkho.html">Quản lý số lượng tồn của sản phẩm</a>
+                </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="wrapper">
+                <header class="content-header">
+                    <h1>Quản lý nhập sản phẩm</h1>
+                </header>
+                
+                <div class="content-body">
+                    <div class="table-wrapper">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Chọn</th>
+                                    <th>ID Phiếu</th>                       
+                                    <th>Danh mục</th>
+                                    <th>Hãng</th>
+                                    <th>Tên Sản phẩm</th>
+                                    <th>Số lượng</th>
+                                    <th>Giá nhập</th>
+                                    <th>Ngày nhập</th>
+                                </tr>
+                            </thead>
+                            <tbody id="import-table-body">
+                                </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <footer class="manage-panel">
+                <div class="button-group">
+                    <button class="btn" id="add-btn">Thêm phiếu nhập</button>
+                    <button class="btn" id="edit-btn">Sửa phiếu nhập</button>
+                    <button class="btn btn-danger" id="delete-btn">Xóa phiếu nhập</button>
+                </div>
+                <input type="text" placeholder="Tìm kiếm đơn nhập" class="search-box">
+            </footer>
+        </main>
+    </div>
+
+    <div id="add-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Thêm Phiếu Nhập Mới</h2>
+            <form id="add-form">
+                <input type="text" name="type" list="product-types-list" placeholder="Danh mục (VD: Laptop)" required>
+                <input type="text" name="brand" placeholder="Hãng (VD: MSI)" required>
+                <input type="text" name="name" placeholder="Tên sản phẩm (VD: Laptop MSI Gaming Katana)" required>
+                <input type="text" name="image" placeholder="Link ảnh minh họa (URL)">
+                
+                <textarea name="description" placeholder="Mô tả chi tiết cho 'búp bê' này..."></textarea>
+                
+                <input type="number" name="quantity" placeholder="Số lượng" min="1" required>
+                <input type="number" name="importprice" placeholder="Giá nhập" min="0" required>
+                <input type="date" name="importdate" required>
+                <button type="submit" class="btn">Lưu</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="edit-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Sửa Thông Tin Phiếu Nhập</h2>
+            <form id="edit-form">
+                <input type="hidden" name="id">
+                <input type="text" name="type" list="product-types-list" placeholder="Danh mục" required>
+                <input type="text" name="brand" placeholder="Hãng" required>
+                <input type="text" name="name" placeholder="Tên sản phẩm" required>
+                <input type="text" name="image" placeholder="Link ảnh minh họa (URL)">
+                
+                <textarea name="description" placeholder="Mô tả chi tiết..."></textarea>
+                
+                <input type="number" name="quantity" placeholder="Số lượng" min="1" required>
+                <input type="number" name="importprice" placeholder="Giá nhập" min="0" required>
+                <input type="date" name="importdate" required>
+                <button type="submit" class="btn">Cập nhật</button>
+            </form>
+        </div>
+    </div>
+
+    <datalist id="product-types-list">
+        <option value="Máy tính bàn">
+        <option value="Laptop">
+        <option value="Linh kiện máy tính">
+        <option value="Phụ kiện máy tính">
+        <option value="Ghế - Bàn">
+        <option value="Phần mềm">
+    </datalist>
+
+    <div id="delete-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Xác nhận xóa</h2>
+            <p>Bạn có chắc chắn muốn xóa phiếu nhập này không?</p>
+            <div class="action-buttons">
+                <button id="confirm-delete-btn" class="btn btn-danger">Xác nhận</button>
+                <button id="cancel-delete-btn" class="btn cancel-btn">Hủy</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

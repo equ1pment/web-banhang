@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/styles/user/user-dashboard.css">
+    <link rel="stylesheet" href="assets/fonts/font.css">
+    <link rel="stylesheet" href="assets/styles/user/user-auth.css"> 
+    
+    <script src="assets/scripts/user-scripts/user-profile.js" type="module" defer></script>
+    <script src="assets/scripts/user-scripts/user-global.js" type="module" defer></script>
+    <title>Thông Tin Cá Nhân</title>
+</head>
+<body>
+    <header class="header">
+        <div class="panel-flex">
+                    <button id="login-btn" class="login-button">Đăng nhập</button>
+                    
+                    <a href="user-register.html" class="register-link-btn">Đăng kí</a>
+                </div>
+        <h1><a href="index.html" style="color:white; text-decoration: none;">Trạm Không Gian</a></h1>
+        <p>"Any sufficiently advanced technology is indistinguishable from magic."</p>
+        <div class="section" id="category-links">
+            </div>
+    </header>
+
+    <div class="wrapper">
+        <div class="auth-container">
+            <h2>Thông Tin Cá Nhân</h2>
+            <form id="profile-form">
+                <div class="form-group">
+                    <label for="email">Email (Không thể đổi)</label>
+                    <input type="email" id="email" name="email" readonly disabled>
+                </div>
+                <div class="form-group">
+                    <label for="name">Họ và Tên</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Số điện thoại</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+
+                <hr style="border: 1px solid #eee; margin: 1.5em 0;">
+
+                <p style="text-align: center; margin-top:0; color: #555;">(Bỏ trống nếu không muốn đổi mật khẩu)</p>
+                <div class="form-group">
+                    <label for="password">Mật khẩu mới</label>
+                    <input type="password" id="password" name="password">
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">Xác nhận Mật khẩu mới</label>
+                    <input type="password" id="confirm-password" name="confirm-password">
+                </div>
+
+                <p id="error-message" class="error-text"></p>
+                <button type="submit" class="btn-auth">Cập nhật thông tin</button>
+                <button type="submit" class="logout-btn">Đăng xuất</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="informations">
+            <div class="contacts">
+                <div class="informations-header">
+                    <h3>TỔNG ĐÀI HỖ TRỢ</h3>
+                </div>
+                    <p>Mua hàng: 1900 727727</p>
+                    <p>Bảo hành: 1900 666666</p>
+                    <p>Khiếu nại: 1900 696969</p>
+                </div>
+            <div class="connections">
+                <div class="informations-header">
+                    <h3>KẾT NỐI VỚI CHÚNG TÔI</h3>
+                </div>
+                <div>
+                    <a href="https://www.facebook.com/equ1pment/" target="_blank">Facebook</a>
+                    <a href="https://www.youtube.com/@equ1pp" target="_blank">Youtube</a>
+                    <a href="https://www.tiktok.com/@chascadepgaiquaaa" target="_blank">TikTok</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <button class="menu-trigger">
+                <span>TỔNG ĐÀI HỖ TRỢ</span>
+                <span class="icon">+</span>
+            </button>
+
+            <div class="sub-menu">
+                <p>Mua hàng: 1900 727727</p>
+                <p>Bảo hành: 1900 666666</p>
+                <p>Khiếu nại: 1900 696969</p>
+            </div>
+        </div>
+
+        <div class="menu-item">
+            <button class="menu-trigger">
+                <span>KẾT NỐI VỚI CHÚNG TÔI</span>
+                <span class="icon">+</span>
+            </button>
+            
+            <div class="sub-menu">
+                <a href="https://www.facebook.com/equ1pment/" target="_blank">Facebook</a>
+                <a href="https://www.youtube.com/@equ1pp" target="_blank">Youtube</a>
+                <a href="https://www.tiktok.com/@chascadepgaiquaaa" target="_blank">TikTok</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

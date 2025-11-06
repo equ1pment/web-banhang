@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/fonts/font.css">
+    <link rel="stylesheet" href="assets/styles/admin/admin-global.css">
+    <link rel="stylesheet" href="assets/styles/admin/admin-qlkh.css">
+    <link rel="stylesheet" href="assets/styles/admin/admin-modal.css">
+    <script src="assets/scripts/virtualData-customers.js" type="module" defer></script>
+    <script src="assets/scripts/admin-guard.js" type="module"></script>
+    <title>Quản lý khách hàng</title>
+</head>
+<body>
+    <div class="admin-wrapper">
+        <aside class="sidebar">
+            <div class="sidebar-header">ADMIN</div>
+            <nav class="sidebar-nav">
+                <a href="dashboard.html">Trang tổng quan</a>
+                <a href="quanlykhachhang.html" class="active">Quản lý khách hàng / người dùng</a>
+                <a href="quanlyloaisp.html">Quản lý loại sản phẩm</a>
+                <a href="quanlynhapsp.html">Quản lý nhập sản phẩm</a>
+                <a href="quanlygiaban.html">Quản lý giá bán</a>
+                <a href="quanlydondatsp.html">Quản lý đơn đặt hàng của khách hàng / người dùng</a>
+                <a href="quanlysoluongtonkho.html">Quản lý số lượng tồn kho của sản phẩm</a>
+                </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="wrapper">
+                <header class="content-header">
+                    <h1>Quản lý khách hàng</h1>
+                </header>
+                
+                <div class="content-body">
+                    <div class="table-wrapper">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Tên khách hàng</th>
+                                    <th>Email</th>
+                                    <th>Số điện thoại</th>
+                                    <th>Trạng thái</th>
+                                    <th>Hành động</th>
+                                </tr>
+                            </thead>
+                            <tbody id="customer-table-body">
+                                
+                                </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <footer class="manage-panel">
+                <input type="text" placeholder="Tìm kiếm khách hàng" class="search-box">
+            </footer>
+            <div id="lock-modal" class="modal hidden">
+                <div class="modal-content">
+                    <span class="close-btn">&times;</span>
+                    <h2 id="lock-modal-title">Xác nhận hành động</h2>
+                    <p id="lock-modal-text">Bạn có chắc chắn muốn thực hiện hành động này không?</p>
+                    <div class="action-buttons">
+                        <button id="confirm-lock-btn" class="btn btn-danger">Xác nhận</button>
+                        <button class="btn cancel-btn">Hủy</button>
+                    </div>
+                </div>
+            </div>
+            <div id="reset-modal" class="modal hidden">
+                <div class="modal-content">
+                    <span class="close-btn">&times;</span>
+                    <h2>Xác nhận Reset Mật khẩu</h2>
+                    <p>Bạn có chắc chắn muốn đặt lại mật khẩu cho khách hàng này không?</p>
+                    <div class="action-buttons">
+                        <button id="confirm-reset-btn" class="btn btn-danger">Xác nhận</button>
+                        <button class="btn cancel-btn">Hủy</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
